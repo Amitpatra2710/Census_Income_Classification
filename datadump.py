@@ -1,6 +1,10 @@
 import pymongo
 import pandas as pd
 import json
+from dotenv import load_dotenv
+
+print(f"Loading environment vartaible from .env file")
+load_dotenv()
 
 # Provide the mongodb localhost url to connect python to mongodb.
 client = pymongo.MongoClient("mongodb+srv://amitpatra:amit27@cluster0.cqlj9.mongodb.net/?retryWrites=true&w=majority")
@@ -20,4 +24,4 @@ if __name__=="__main__":
     print(json_record[0])
 
     #insert converted json record to mongo db
-    client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
+    #client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
